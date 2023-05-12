@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ButtonView: View {
-    @Binding var stepsCount: Int
+    @ObservedObject var timer: TimeCounter
     
     var body: some View {
-        Button(action: { stepsCount += 1 }) {
+        Button(action: timer.startTimer) {
             Text("Start")
                 .font(.largeTitle)
                 .bold()
@@ -24,8 +24,8 @@ struct ButtonView: View {
     }
 }
 
-struct ButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonView(stepsCount: .constant(1))
-    }
-}
+//struct ButtonView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ButtonView(timer: 1)
+//    }
+//}

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var stepsCount = 1
+    @StateObject private var timer = TimeCounter()
     
     var body: some View {
         VStack {
@@ -25,7 +25,7 @@ struct ContentView: View {
                         .rotationEffect(.degrees(Double(iteration) * 360 / 5))
                 }
                 
-                Text(stepsCount.formatted())
+                Text(timer.stepsCounter.formatted())
                     .font(.largeTitle)
                     .bold()
                     .foregroundColor(.blue)
@@ -33,7 +33,7 @@ struct ContentView: View {
             
             Spacer()
             
-            ButtonView(stepsCount: $stepsCount)
+            ButtonView(timer: timer)
 
         }
     }

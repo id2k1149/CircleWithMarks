@@ -14,6 +14,7 @@
 		50BC67BE2A0E9976009215C0 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC67BD2A0E9976009215C0 /* CircleView.swift */; };
 		50BC67C02A0E99AF009215C0 /* MarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC67BF2A0E99AF009215C0 /* MarkView.swift */; };
 		50BC67C22A0EA541009215C0 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC67C12A0EA541009215C0 /* ButtonView.swift */; };
+		50BC67C42A0EBD9E009215C0 /* TimeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC67C32A0EBD9E009215C0 /* TimeCounter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		50BC67BD2A0E9976009215C0 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		50BC67BF2A0E99AF009215C0 /* MarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkView.swift; sourceTree = "<group>"; };
 		50BC67C12A0EA541009215C0 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		50BC67C32A0EBD9E009215C0 /* TimeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				50BC67BD2A0E9976009215C0 /* CircleView.swift */,
 				50BC67BF2A0E99AF009215C0 /* MarkView.swift */,
 				50BC67C12A0EA541009215C0 /* ButtonView.swift */,
+				50BC67C32A0EBD9E009215C0 /* TimeCounter.swift */,
 				50BC67B32A0E811B009215C0 /* Assets.xcassets */,
 				50BC67B52A0E811B009215C0 /* Preview Content */,
 			);
@@ -149,6 +152,7 @@
 				50BC67BE2A0E9976009215C0 /* CircleView.swift in Sources */,
 				50BC67B22A0E8119009215C0 /* ContentView.swift in Sources */,
 				50BC67C22A0EA541009215C0 /* ButtonView.swift in Sources */,
+				50BC67C42A0EBD9E009215C0 /* TimeCounter.swift in Sources */,
 				50BC67B02A0E8119009215C0 /* CircleWithMarksApp.swift in Sources */,
 				50BC67C02A0E99AF009215C0 /* MarkView.swift in Sources */,
 			);
