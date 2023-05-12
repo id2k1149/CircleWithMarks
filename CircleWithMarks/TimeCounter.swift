@@ -11,16 +11,20 @@ import Foundation
 class TimeCounter: ObservableObject {
     let objectWillChange = PassthroughSubject<TimeCounter, Never>()
     var stepsCounter = 1
+    var buttonTitle = "Start"
     var timer: Timer?
     
     func startTimer() {
-        timer = Timer.scheduledTimer(
-            timeInterval: 1,
-            target: self,
-            selector: #selector(updateStepsCounter),
-            userInfo: nil,
-            repeats: true
-        )
+        if stepsCounter == 1 {
+            timer = Timer.scheduledTimer(
+                timeInterval: 1,
+                target: self,
+                selector: #selector(updateStepsCounter),
+                userInfo: nil,
+                repeats: true
+            )
+        }
+        buttonWasTapped()
     }
     
     @objc private func updateStepsCounter() {
@@ -28,6 +32,17 @@ class TimeCounter: ObservableObject {
             stepsCounter += 1
         } else {
             killTimer()
+            buttonTitle = "Reset"
+        }
+        objectWillChange.send(self)
+    }
+    
+    private func buttonWasTapped() {
+        if buttonTitle == "Reset" {
+            stepsCounter = 1
+            buttonTitle = "Start"
+        } else {
+            buttonTitle = "Wait..."
         }
         objectWillChange.send(self)
     }
