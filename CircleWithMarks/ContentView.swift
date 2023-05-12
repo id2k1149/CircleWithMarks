@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var timer = TimeCounter()
+    @State private var progress: Double = 0.0
     
     var body: some View {
         VStack {
             Spacer()
             
             ZStack {
-                CircleView()
+                CircleView(progress: $progress)
                 
                 let circleDiameter = UIScreen.main.bounds.width * 0.9
                 
@@ -32,6 +33,12 @@ struct ContentView: View {
             }
             
             Spacer()
+            
+            Button("Start") {
+                withAnimation {
+                    progress += 0.2
+                }
+            }
             
             ButtonView(timer: timer)
 
