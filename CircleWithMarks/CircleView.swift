@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CircleView: View {
-    @Binding var progress: Double
+    var progress: Double
     
     var body: some View {
         let circleDiameter = UIScreen.main.bounds.width * 0.9
@@ -32,6 +32,6 @@ struct CircleView: View {
 
 struct CircleView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleView(progress: .constant(0))
+        CircleView(progress: 0)
     }
 }

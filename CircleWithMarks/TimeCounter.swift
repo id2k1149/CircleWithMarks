@@ -11,6 +11,7 @@ import Foundation
 class TimeCounter: ObservableObject {
     let objectWillChange = PassthroughSubject<TimeCounter, Never>()
     var stepsCounter = 1
+    var progress = 0.0
     var buttonTitle = "Start"
     var timer: Timer?
     
@@ -28,8 +29,10 @@ class TimeCounter: ObservableObject {
     }
     
     @objc private func updateStepsCounter() {
-        if stepsCounter < 5 {
+        if stepsCounter < 6 {
             stepsCounter += 1
+            progress += 0.2
+//            progress += 1
         } else {
             killTimer()
             buttonTitle = "Reset"
@@ -40,6 +43,7 @@ class TimeCounter: ObservableObject {
     private func buttonWasTapped() {
         if buttonTitle == "Reset" {
             stepsCounter = 1
+            progress = 0
             buttonTitle = "Start"
         } else {
             buttonTitle = "Wait..."
