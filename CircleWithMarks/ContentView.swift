@@ -8,18 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var stepsCount = 1
     
     var body: some View {
-        ZStack {
-            CircleView()
+        VStack {
+            Spacer()
             
-            let circleDiameter = UIScreen.main.bounds.width * 0.9
-            
-            ForEach(0..<5, id: \.self) { iteration in
-                MarkView()
-                    .offset(y: -circleDiameter / 2)
-                    .rotationEffect(.degrees(Double(iteration) * 360 / 5))
+            ZStack {
+                CircleView()
+                
+                let circleDiameter = UIScreen.main.bounds.width * 0.9
+                
+                ForEach(0..<5, id: \.self) { iteration in
+                    MarkView()
+                        .offset(y: -circleDiameter / 2)
+                        .rotationEffect(.degrees(Double(iteration) * 360 / 5))
+                }
+                
+                Text(stepsCount.formatted())
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundColor(.blue)
             }
+            
+            Spacer()
+            
+            ButtonView(stepsCount: $stepsCount)
+
         }
     }
 }
