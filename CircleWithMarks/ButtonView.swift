@@ -24,8 +24,8 @@ struct ButtonView: View {
     }
 }
 
-//struct ButtonView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ButtonView(timer: 1)
-//    }
-//}
+struct ButtonView_Previews: PreviewProvider {
+    static var previews: some View {
+        ButtonView(timer: TimeCounter())
+    }
+}
