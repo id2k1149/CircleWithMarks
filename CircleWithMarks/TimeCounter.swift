@@ -5,6 +5,7 @@
 //  Created by Max Franz Immelmann on 5/12/23.
 //
 
+/*
 import Combine
 import Foundation
 
@@ -56,3 +57,4 @@ class TimeCounter: ObservableObject {
         timer = nil
     }
 }
+*/

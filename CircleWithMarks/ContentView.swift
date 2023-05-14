@@ -8,33 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var timer = TimeCounter()
-    
     var body: some View {
-        VStack {
-            Spacer()
-            
-            ZStack {
-                CircleView(progress: timer.progress)
-                
-                let circleDiameter = UIScreen.main.bounds.width * 0.9
-                
-                ForEach(0..<5, id: \.self) { iteration in
-                    MarkView()
-                        .offset(y: -circleDiameter / 2)
-                        .rotationEffect(.degrees(Double(iteration) * 360 / 5))
+        TabView {
+            LessonView()
+                .tabItem {
+                    Label("5 Points Star",
+                          systemImage: "star")
                 }
-                
-                Text(timer.stepsCounter.formatted())
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundColor(.blue)
-            }
             
-            Spacer()
-
-            ButtonView(timer: timer)
-
+            ListView()
+                .tabItem {
+                    Label("Star List",
+                          systemImage: "list.bullet")
+                }
         }
     }
 }

@@ -15,6 +15,8 @@
 		50BC67C02A0E99AF009215C0 /* MarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC67BF2A0E99AF009215C0 /* MarkView.swift */; };
 		50BC67C22A0EA541009215C0 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC67C12A0EA541009215C0 /* ButtonView.swift */; };
 		50BC67C42A0EBD9E009215C0 /* TimeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC67C32A0EBD9E009215C0 /* TimeCounter.swift */; };
+		50BC67C62A11342F009215C0 /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC67C52A11342F009215C0 /* LessonView.swift */; };
+		50BC67C82A113C9B009215C0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC67C72A113C9B009215C0 /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		50BC67BF2A0E99AF009215C0 /* MarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkView.swift; sourceTree = "<group>"; };
 		50BC67C12A0EA541009215C0 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		50BC67C32A0EBD9E009215C0 /* TimeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounter.swift; sourceTree = "<group>"; };
+		50BC67C52A11342F009215C0 /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
+		50BC67C72A113C9B009215C0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			children = (
 				50BC67AF2A0E8119009215C0 /* CircleWithMarksApp.swift */,
 				50BC67B12A0E8119009215C0 /* ContentView.swift */,
+				50BC67C52A11342F009215C0 /* LessonView.swift */,
+				50BC67C72A113C9B009215C0 /* ListView.swift */,
 				50BC67BD2A0E9976009215C0 /* CircleView.swift */,
 				50BC67BF2A0E99AF009215C0 /* MarkView.swift */,
 				50BC67C12A0EA541009215C0 /* ButtonView.swift */,
@@ -149,6 +155,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50BC67C82A113C9B009215C0 /* ListView.swift in Sources */,
+				50BC67C62A11342F009215C0 /* LessonView.swift in Sources */,
 				50BC67BE2A0E9976009215C0 /* CircleView.swift in Sources */,
 				50BC67B22A0E8119009215C0 /* ContentView.swift in Sources */,
 				50BC67C22A0EA541009215C0 /* ButtonView.swift in Sources */,
