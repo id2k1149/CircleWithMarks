@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LessonView: View {
-    @State private var stepsCounter = 0
+    @State private var currentStep = Step.start
     
     var body: some View {
         VStack {
@@ -18,8 +18,8 @@ struct LessonView: View {
                 .bold()
                 .padding()
             
-            ButtonView()
-                .padding()
+            ButtonView(currentStep: $currentStep)
+                .padding(.bottom)
             
             ZStack {
                 CircleView(progress: 0)
@@ -31,17 +31,12 @@ struct LessonView: View {
                         .offset(y: -circleDiameter / 2)
                         .rotationEffect(.degrees(Double(iteration) * 360 / 5))
                 }
-                
-//                Text(timer.stepsCounter.formatted())
-//                    .font(.largeTitle)
-//                    .bold()
-//                    .foregroundColor(.blue)
             }
             
-            Spacer()
-
-            
-
+            ZStack {
+                StepView(currentStep: $currentStep)
+            }
+            .frame(width: 350, height: 150)
         }
     }
 }

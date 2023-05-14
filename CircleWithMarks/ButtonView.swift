@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ButtonView: View {
-//    @ObservedObject var timer: TimeCounter
+    @Binding var currentStep: Step
     
     var body: some View {
-        Button(action: {}) {
-            Text("Start")
+        Button(action: buttonAction) {
+            Text(currentStep == Step.start ? "Start" : "Next step")
                 .font(.largeTitle)
                 .bold()
                 .foregroundColor(.white)
@@ -22,11 +22,16 @@ struct ButtonView: View {
         .cornerRadius(20)
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 4))
     }
+    
+    private func buttonAction() {
+        withAnimation {
+            currentStep = Step(rawValue: currentStep.rawValue + 1) ?? Step.start
+        }
+    }
 }
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-//        ButtonView(timer: TimeCounter())
-        ButtonView()
+        ButtonView(currentStep: .constant(Step.start))
     }
 }
