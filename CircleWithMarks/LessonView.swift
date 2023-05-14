@@ -9,34 +9,42 @@ import SwiftUI
 
 struct LessonView: View {
     @State private var currentStep = Step.start
+//    @State private var currentStep = Step.one
+    @State private var progress: Double = 0
+    
     
     var body: some View {
+        let diameter = UIScreen.main.bounds.width * 0.9
+        
         VStack {
-            Text("How to Draw a Star Step by Step")
+            Text("How to Draw a Star")
                 .font(.largeTitle)
-                .multilineTextAlignment(.center)
                 .bold()
                 .padding()
             
-            ButtonView(currentStep: $currentStep)
+            ButtonView(currentStep: $currentStep,
+                       progress: $progress)
                 .padding(.bottom)
             
             ZStack {
-                CircleView(progress: 0)
-                
-                let circleDiameter = UIScreen.main.bounds.width * 0.9
-                
-                ForEach(0..<5, id: \.self) { iteration in
-                    MarkView()
-                        .offset(y: -circleDiameter / 2)
-                        .rotationEffect(.degrees(Double(iteration) * 360 / 5))
+                if currentStep.rawValue > 0 {
+                    CircleView(progress: $progress)
+                    
+                    ForEach(0..<5, id: \.self) { iteration in
+                        MarkView()
+                            .offset(y: -diameter / 2)
+                            .rotationEffect(.degrees(Double(iteration) * 360 / 5))
+                    }
                 }
             }
+            .frame(width: diameter,
+                   height: diameter)
+            
             
             ZStack {
                 StepView(currentStep: $currentStep)
             }
-            .frame(width: 350, height: 150)
+            .frame(width: diameter, height: 150)
         }
     }
 }

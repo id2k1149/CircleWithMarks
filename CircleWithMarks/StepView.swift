@@ -21,7 +21,7 @@ enum Step: Int, CaseIterable {
         case .start:
             return ""
         case .one:
-            return "#1 Draw a small circle. It’s important to leave enough space around this circle."
+            return "Draw a relatively big circle of an arbitrary radius."
         case .two:
             return "#2 Draw a small circle. It’s important to leave enough space around this circle."
         case .three:

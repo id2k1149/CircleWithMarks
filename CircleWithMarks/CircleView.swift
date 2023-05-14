@@ -8,30 +8,33 @@
 import SwiftUI
 
 struct CircleView: View {
-    var progress: Double
+    @Binding var progress: Double
     
     var body: some View {
-        let circleDiameter = UIScreen.main.bounds.width * 0.9
+        let diameter = UIScreen.main.bounds.width * 0.9
         
         ZStack {
             Circle()
                 .stroke(Color.gray.opacity(0.5), lineWidth: 2)
-                .frame(width: circleDiameter,
-                   height: circleDiameter)
-            
+                
             Circle()
-                .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
+                .trim(from: 0, to: CGFloat(min(progress, 1.0)))
                 .stroke(Color.blue, lineWidth: 2)
-                .animation(.linear, value: progress)
                 .rotationEffect(Angle(degrees: -90))
-                .frame(width: circleDiameter,
-                       height: circleDiameter)
+                .animation(.linear(duration: 1), value: progress)
+                
+            Text(progress.formatted())
+                .font(.largeTitle)
+                .bold()
+                .offset(x: diameter / 4)
         }
+        .frame(width: diameter,
+           height: diameter)
     }
 }
 
 struct CircleView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleView(progress: 0)
+        CircleView(progress: .constant(0))
     }
 }
