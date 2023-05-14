@@ -21,11 +21,11 @@ enum Step: Int, CaseIterable {
         case .start:
             return ""
         case .one:
-            return "Draw a relatively big circle of an arbitrary radius."
+            return ""
         case .two:
-            return "#2 Draw a small circle. It’s important to leave enough space around this circle."
+            return "Draw a relatively big circle of an arbitrary radius."
         case .three:
-            return "#3 Draw a small circle. It’s important to leave enough space around this circle."
+            return "Add a vertical line that is going from the central point of the circle."
         case .four:
             return "#4 Draw a small circle. It’s important to leave enough space around this circle."
         case .five:
@@ -40,9 +40,9 @@ struct StepView: View {
     @Binding var currentStep: Step
     
     var body: some View {
-        if currentStep.rawValue > 0 {
+        if currentStep.rawValue > 1 {
             VStack (alignment: .leading) {
-                Text("Step \(currentStep.rawValue)")
+                Text("Step \(currentStep.rawValue - 1)")
                     .font(.largeTitle)
                     .bold()
                    
@@ -54,6 +54,6 @@ struct StepView: View {
 
 struct StepView_Previews: PreviewProvider {
     static var previews: some View {
-        StepView(currentStep: .constant(Step(rawValue: 1) ?? Step.one))
+        StepView(currentStep: .constant(Step(rawValue: 2) ?? Step.one))
     }
 }

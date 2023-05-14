@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LessonView: View {
-    @State private var currentStep = Step.start
-//    @State private var currentStep = Step.one
+//    @State private var currentStep = Step.start
+    @State private var currentStep = Step.one
     @State private var progress: Double = 0
     
     
@@ -30,11 +30,14 @@ struct LessonView: View {
                 if currentStep.rawValue > 0 {
                     CircleView(progress: $progress)
                     
-                    ForEach(0..<5, id: \.self) { iteration in
-                        MarkView()
-                            .offset(y: -diameter / 2)
-                            .rotationEffect(.degrees(Double(iteration) * 360 / 5))
-                    }
+//                    ForEach(0..<5, id: \.self) { iteration in
+//                        MarkView()
+//                            .offset(y: -diameter / 2)
+//                            .rotationEffect(.degrees(Double(iteration) * 360 / 5))
+//                    }
+                }
+                if currentStep.rawValue > 2 {
+                    MarkLineView(progress: $progress)
                 }
             }
             .frame(width: diameter,

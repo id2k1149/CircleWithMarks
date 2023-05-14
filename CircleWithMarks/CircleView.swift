@@ -14,14 +14,14 @@ struct CircleView: View {
         let diameter = UIScreen.main.bounds.width * 0.9
         
         ZStack {
-            Circle()
-                .stroke(Color.gray.opacity(0.5), lineWidth: 2)
+//            Circle()
+//                .stroke(Color.gray.opacity(0.5), lineWidth: 2)
                 
             Circle()
                 .trim(from: 0, to: CGFloat(min(progress, 1.0)))
-                .stroke(Color.blue, lineWidth: 2)
+                .stroke(Color.gray.opacity(0.5), lineWidth: 2)
                 .rotationEffect(Angle(degrees: -90))
-                .animation(.linear(duration: 1), value: progress)
+                .animation(.linear(duration: 3), value: progress)
                 
             Text(progress.formatted())
                 .font(.largeTitle)
@@ -35,6 +35,6 @@ struct CircleView: View {
 
 struct CircleView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleView(progress: .constant(0))
+        CircleView(progress: .constant(1))
     }
 }
