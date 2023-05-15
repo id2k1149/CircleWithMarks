@@ -30,14 +30,22 @@ struct LessonView: View {
                 if currentStep.rawValue > 0 {
                     CircleView(progress: $progress)
                     
-//                    ForEach(0..<5, id: \.self) { iteration in
-//                        MarkView()
-//                            .offset(y: -diameter / 2)
-//                            .rotationEffect(.degrees(Double(iteration) * 360 / 5))
-//                    }
+
                 }
                 if currentStep.rawValue > 2 {
                     MarkLineView(progress: $progress)
+                }
+                if currentStep.rawValue > 3 {
+                    ForEach(0..<5, id: \.self) { iteration in
+                        MarkLineView(progress: $progress)
+//                            .offset(y: -diameter / 2)
+                            .rotationEffect(.degrees(Double(iteration) * 360 / 5))
+                    }
+                    ForEach(0..<5, id: \.self) { iteration in
+                        MarkView()
+                            .offset(y: -diameter / 2)
+                            .rotationEffect(.degrees(Double(iteration) * 360 / 5))
+                    }
                 }
             }
             .frame(width: diameter,

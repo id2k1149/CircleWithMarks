@@ -27,9 +27,9 @@ enum Step: Int, CaseIterable {
         case .three:
             return "Add a vertical line that is going from the central point of the circle."
         case .four:
-            return "#4 Draw a small circle. It’s important to leave enough space around this circle."
+            return "Let’s find the first sector with a protractor; its angle should be 72°. Add more lines. Now we have five sectors; the points where the lines cross the circumference will be the apexes of our star."
         case .five:
-            return "#5 Draw a small circle. It’s important to leave enough space around this circle."
+            return "Connect all points"
         case .six:
             return "#6 Draw a small circle. It’s important to leave enough space around this circle."
         }

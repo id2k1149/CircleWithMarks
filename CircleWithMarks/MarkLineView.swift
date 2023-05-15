@@ -32,8 +32,6 @@ struct MarkLineView: View {
             .animation(.linear(duration: 20),
                        value: progress)
             
-            Text(progress.formatted())
-                .offset(y: 20)
             
         }
         .frame(width: diameter,
